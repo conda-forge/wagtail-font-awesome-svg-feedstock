@@ -1,18 +1,18 @@
 {% set name = "wagtail-font-awesome-svg" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wagtail-font-awesome-svg-{{ version }}.tar.gz
-  sha256: 108f831dd4529e6214b5aed04bf6deb4b8344460783fbdbef5dc7a4d7fa8374c
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name | replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: f2a19c23d071e58157a3ac4cea61c1dfeddf6cc337d8c99bc88aa0fe52d1ff61
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
